@@ -52,7 +52,7 @@ class UI:
     @staticmethod
     def main():
         op = 0
-        while op != 11:
+        while op != 12:
             op = UI.menu()
             if op == 1: UI.inserir_time()
             if op == 2: UI.listar_time()
@@ -64,62 +64,46 @@ class UI:
             if op == 8: UI.atualizar_jogador()
             if op == 9: UI.excluir_jogador()
             if op == 10: UI.pesquisar_jogador()
+            if op == 11: UI.Transferir_jogador()
+            if op == 12: return exit
     @staticmethod
     def menu():
-        print("1-Inserir time 2-Listar times 3-Atualizar times 4-Excluir time 5-Pesquisar time \n "
-        "6-Inserir jogador 7-Listar jogador 8-Atualizar jogadores 9-Excluir jogador 10-Pesquisar jogador 11-Fim")
+        print(" -- MENU --\n 1-Inserir time\n 2-Listar times\n 3-Atualizar times\n 4-Excluir time\n 5-Pesquisar time\n 6-Inserir jogador\n 7-Listar jogador\n 8-Atualizar jogadores\n 9-Excluir jogador\n 10-Pesquisar jogador\n 11-Transferir Jogador\n 12-Sair")
         return int(input("Escolha uma opção: "))
-    @staticmethod
-    def Pre_inserir():
-        op = 0
-        while op != 3:
-            op = UI.inserir()
-            if op == 1: UI.inserir_time()
-            if op == 2: UI.inserir_jogador()
-
-    @staticmethod
-    def inserir():
-        print("1-Inserir Time 2-Inserir Jogador")
-        return int("Escolha uma opção: ")
     
     @classmethod
     def inserir_time(cls):
+        print(" -- Inserir_Time --")
         id = int(input("Informe o id do Time: "))
         nome = input("Informe o nome do time: ")
         estado = input("Informe o estado: ")
         x = Time(id, nome, estado)
         cls.Times.append(x)
         print("Time inserido com sucesso")
-    
+    @classmethod
+    def Transferir_jogador(cls):
+        print(" -- Transferir_Jogador --")
+        if len(cls.Jogadores) == 0: print("Nenhum jogador na lista")
     @classmethod
     def inserir_jogador(cls):
+        print(" -- Inserir_Jogador --")
         id = int(input("Informe o id do jogador: "))
         nome = input("Informe o nome do jogador: ")
-        camisa = input("Informe a camisa do jogador: ")
-        idTime = input("Informe o id do time desse jogador")
+        camisa = int(input("Informe a camisa do jogador: "))
+        idTime = int(input("Informe o id do time desse jogador: "))
         x = Jogador(id, nome, camisa, idTime)
         cls.Jogadores.append(x)
         print("Jogador inserido com sucesso")
     
-    @staticmethod
-    def Pre_listar():
-        op = 0
-        while op != 3:
-            op = UI.listar()
-            if op == 1: UI.listar_time()
-            if op == 2: UI.listar_jogador()
-
-    @staticmethod
-    def listar():
-        print("1-listar Times 2-listar Jogadores")
-        return int("Escolha uma opção: ")
     @classmethod
     def listar_time(cls):
+        print(" -- Listar_Time --")
         if len(cls.Times) == 0: print("Nenhum time na lista")
         else:
             for x in cls.Times: print(x)
     @classmethod
     def listar_jogador(cls):
+        print(" -- Listar_Jogadores --")
         if len(cls.Jogadores) == 0: print("Nenhum jogador na lista")
         else:
             for x in cls.Jogadores: print(x)
@@ -134,17 +118,10 @@ class UI:
         for x in cls.Jogadores:
             if x.get_id() == id: return x
         return None
-    
-    @staticmethod
-    def Pre_atualizar():
-        op = 0
-        while op != 3:
-            op = UI.atualizar()
-            if op == 1: UI.atualizar_time()
-            if op == 2: UI.atualizar_jogador()
 
     @classmethod
     def atualizar_time(cls):
+        print(" -- Atualizar_Time --")
         UI.listar_time()
         id = int(input("Informe o id do time a ser alterado: "))
         x = UI.Time_listarID(id)
@@ -156,6 +133,7 @@ class UI:
             cls.Times.append(x)
     @classmethod
     def atualizar_jogador(cls):
+        print(" -- Atualizar_Jogador --")
         UI.listar_jogador()
         id = int(input("Informe o id do jogador a ser alterado: "))
         x = UI.Jogador_listarID(id)
@@ -165,15 +143,10 @@ class UI:
             camisa = input("Informe o nova camisa: ")
             x = Time(id, nome, camisa)
             cls.Jogadores.append(x)
-    @staticmethod
-    def Pre_excluir():
-        op = 0
-        while op != 3:
-            op = UI.excluir()
-            if op == 1: UI.excluir_time()
-            if op == 2: UI.excluir_jogador()
+
     @classmethod
     def excluir_time(cls):
+        print(" -- Excluir_Time --")
         UI.listar_time()
         id = int(input("Informe o id do time a ser excluído: "))
         x = UI.Time_listarID(id)
@@ -181,30 +154,22 @@ class UI:
             cls.Times.remove(x)
     @classmethod
     def excluir_jogador(cls):
+        print(" -- Excluir_Jogador --")
         UI.listar_jogador()
         id = int(input("Informe o id do time a ser excluído: "))
         x = UI.Jogador_listarID(id)
         if x != None:
             cls.Jogadores.remove(x)
-    
-    @staticmethod
-    def Pre_pesquisar():
-        op = 0
-        while op != 3:
-            op = UI.pesquisar()
-            if op == 1: UI.pesquisar_time()
-            if op == 2: UI.pesquisar_jogador()
-    @staticmethod
-    def pesquisar():
-        print("1-pesquisar Times 2-pesquisar Jogadores")
-        return int("Escolha uma opção: ")
+
     @classmethod
     def pesquisar_time(cls):
+        print(" -- Pesquisar_Time --")
         iniciais = input("Informe as iniciais do time: ")
         for x in cls.Times:
             if x.get_nome().startswith(iniciais): print(x)
     @classmethod
     def pesquisar_jogador(cls):
+        print(" --Pesquisar_Jogador --")
         iniciais = input("Informe as iniciais do jogador: ")
         for x in cls.Jogadores:
             if x.get_nome().startswith(iniciais): print(x)
