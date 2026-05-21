@@ -51,19 +51,21 @@ class PacienteUI:
     @staticmethod
     def menu():
         print("-- Menu -- \n1-Inserir, 2-Listar, 3-Atualizar, 4-Excluir, 5-Pesquisar, 6-Aniversariantes, 9-Fim")
+        return int(input("Escolha uma opção: "))
 
     @classmethod
     def inserir(cls):
         print("-- Inserir --")
         id = int(input("Informe o id: "))
-        nome = int(input("Informe o nome: "))
-        cpf = int(input("Informe o CPF: "))
-        fone = int(input("Informe o telefone: "))
-        nasc = datetime.strptime(input("Informe a data de nascimento: "), "%d/%m/%Y")
+        nome = (input("Informe o nome: "))
+        cpf = (input("Informe o CPF: "))
+        fone = (input("Informe o telefone: "))
+        nasc = datetime.datetime.strptime(input("Informe a data de nascimento: "), "%d/%m/%Y")
         x = Paciente(id, nome, cpf, fone, nasc)
         cls.__pacientes.append(x)
     @classmethod
     def listar(cls):
+        print("-- Listar --")
         for x in cls.__pacientes: print(x, x.idade())
 
 PacienteUI.main()
