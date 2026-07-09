@@ -4,9 +4,7 @@ class Cliente:
         self.set_nome(nome)
         self.set_email(email)
         self.set_fone(fone)
-        
-    def __str__(self):
-        return f"{self.__id} - {self.__nome} - {self.__email} – {self.__fone}"
+   
     def set_id(self, id):
         if id < 0: raise ValueError("Id deve ser positivo")
         self.__id = id
@@ -25,9 +23,12 @@ class Cliente:
     def get_email(self) : return self.__email
     def get_fone(self) : return self.__fone
 
+    def __str__(self):
+        return f"{self.__id} - {self.__nome} - {self.__email} - {self.__fone}"
+   
     def to_json(self):
         return { "id":self.__id, "nome":self.__nome, "email":self.__email, "fone":self.__fone }
-    
+   
     @staticmethod
     def from_json(dic):
         return Cliente(dic["id"], dic["nome"], dic["email"], dic["fone"])
