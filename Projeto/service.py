@@ -1,5 +1,5 @@
-from models.cliente import Cliente         # entidade
-from models.clientedao import ClienteDAO   # persistência
+from models.cliente import Cliente
+from models.clientedao import ClienteDAO
 from models.servico import Servico
 from models.servicodao import ServicoDAO
 from models.horario import Horario
@@ -23,7 +23,8 @@ class Service:
     @staticmethod
     def cliente_excluir(id):
         ClienteDAO().excluir(id)
-    
+
+
     @staticmethod
     def servico_inserir(descricao, valor):
         obj = Servico(0, descricao, valor)
@@ -42,6 +43,7 @@ class Service:
     def servico_excluir(id):
         ServicoDAO().excluir(id)
 
+
     @staticmethod
     def horario_inserir(data, confirmado, id_cliente, id_servico):
         c = Horario(0, data)
@@ -54,7 +56,7 @@ class Service:
         return HorarioDAO().listar()
     @staticmethod
     def horario_listar_id(id):
-        return HorarioDAO().listar_id(id)
+        return HorarioDAO().listar_id(id) 
     @staticmethod
     def horario_atualizar(id, data, confirmado, id_cliente, id_servico):
         c = Horario(id, data)
@@ -64,4 +66,4 @@ class Service:
         HorarioDAO().atualizar(c)
     @staticmethod
     def horario_excluir(id):
-        HorarioDAO().excluir(id)
+        HorarioDAO().excluir(id) 
