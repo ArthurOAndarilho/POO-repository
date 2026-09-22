@@ -32,7 +32,7 @@ class Cliente:
     def get_senha(self): return self.__senha
 
     def __str__(self):
-        return f"{self.__id} - {self.__nome} - {self.__email} - {self.__fone} - {self.__id_convenio} - {self.__senha}"
+        return f"{self.__id} - {self.__nome} - {self.__email} - {self.__fone} - {self.__id_convenio}"
     
     def to_json(self):
         return { "id":self.__id, "nome":self.__nome, "email":self.__email, "fone":self.__fone, "id_convenio":self.__id_convenio, "senha":self.__senha}
