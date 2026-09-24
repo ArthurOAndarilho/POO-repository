@@ -47,7 +47,7 @@ class IndexUI:
             admin = st.session_state["usuario_nome"] == "admin"
             st.sidebar.write("Bem-vindo(a), " + st.session_state["usuario_nome"])
             if admin: IndexUI.menu_admin()
-            else:
+            else: 
                 if st.session_state["usuario_tipo"] == "cliente": IndexUI.menu_cliente()
                 else: IndexUI.menu_profissional()
             IndexUI.sair_do_sistema()
