@@ -5,5 +5,19 @@
     "email": "admin",
     "fone": "fone",
     "senha": "1234"
+  },
+  {
+    "id": 2,
+    "nome": "edu",
+    "email": "edu@gmail.com",
+    "fone": "99999-9999",
+    "senha": "senha"
+  },
+  {
+    "id": 3,
+    "nome": "edu",
+    "email": "edu@gmail.com",
+    "fone": "99999-9999",
+    "senha": "poo"
   }
 ]
