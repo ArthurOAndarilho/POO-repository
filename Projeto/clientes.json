@@ -19,5 +19,26 @@
     "email": "edu@gmail.com",
     "fone": "99999-9999",
     "senha": "poo"
+  },
+  {
+    "id": 4,
+    "nome": "Arthur",
+    "email": "ar@gmail.com",
+    "fone": "988323332",
+    "senha": "sen"
+  },
+  {
+    "id": 5,
+    "nome": "admin",
+    "email": "ad",
+    "fone": "999999999",
+    "senha": "e"
+  },
+  {
+    "id": 6,
+    "nome": "otavio",
+    "email": "otavio",
+    "fone": "99999999",
+    "senha": "wwww"
   }
 ]
