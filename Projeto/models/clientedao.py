@@ -17,7 +17,7 @@ class ClienteDAO:
         self.__objetos.append(obj)
         self.__salvar()
 
-    def listar(self):                
+    def listar(self):
         return self.__objetos
 
     def listar_id(self, id):
