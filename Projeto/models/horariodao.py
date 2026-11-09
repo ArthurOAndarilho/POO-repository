@@ -4,7 +4,7 @@ import json
 
 class HorarioDAO:
     def __init__(self):
-        super().__init__("clientes.json")
+        super().__init__("horarios.json")
 
     def _abrir(self):  
         try:  
