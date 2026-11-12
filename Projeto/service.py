@@ -1,16 +1,16 @@
 from datetime import datetime
 from models.cliente import Cliente
-from models.clientedao import ClienteDAO
+from dao_sql.clientedao import ClienteDAO
 from models.servico import Servico
-from models.servicodao import ServicoDAO
+from dao_json.servicodao import ServicoDAO
 from models.horario import Horario
-from models.horariodao import HorarioDAO
+from dao_json.horariodao import HorarioDAO
 from models.profissional import Profissional
-from models.profissionaldao import ProfissionalDAO
+from dao_json.profissionaldao import ProfissionalDAO
 from models.atendimento import Atendimento
-from models.atendimentodao import AtendimentoDAO
+from dao_json.atendimentodao import AtendimentoDAO
 from models.convenio import Convenio
-from models.conveniodao import ConvenioDAO
+from dao_json.conveniodao import ConvenioDAO
 
 class Service:
     @staticmethod
