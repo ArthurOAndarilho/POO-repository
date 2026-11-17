@@ -12,7 +12,6 @@ class ClienteDAO(DAO):
         cls.execute(sql, (obj.get_nome(), obj.get_email(), obj.get_fone(), obj.get_senha()))
         cls.fechar()
 
-
     @classmethod
     def listar(cls):
         cls.abrir()
@@ -44,8 +43,8 @@ class ClienteDAO(DAO):
         cls.fechar()
 
     @classmethod
-    def excluir(cls, obj):
+    def excluir(cls, id):
         cls.abrir()
         sql = "DELETE FROM cliente WHERE id=?"
-        cls.execute(sql, (obj,))
+        cls.execute(sql, (id,))
         cls.fechar()
